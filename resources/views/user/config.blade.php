@@ -13,7 +13,7 @@
                 <div class="card-header">Configuración de mi cuenta</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{route('user.update')}}">
+                    <form method="POST" action="{{route('user.update')}}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -55,7 +55,7 @@
                                 @endif
                             </div>
                         </div>
-
+                        
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">E-mail</label>
 
@@ -69,6 +69,21 @@
                                 @endif
                             </div>
                         </div>
+                        
+                         <div class="form-group row">
+                            <label for="image_path" class="col-md-4 col-form-label text-md-right">Avatar</label>
+
+                            <div class="col-md-6">
+                                <input id="image_path" type="file" class="form-control{{ $errors->has('image_path') ? ' is-invalid' : '' }}" name="image_path"  required>
+
+                                @if ($errors->has('image_path'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('image_path') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
