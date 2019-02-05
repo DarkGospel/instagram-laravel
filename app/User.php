@@ -14,7 +14,7 @@ class User extends Authenticatable
 *@vararray
 */
 protected $fillable=[
-    'role','name', 'surname', 'nick','email','password'
+    'role','name', 'surname', 'nick','email','password',
 ];
 /**
 *Theattributesthatshouldbehiddenforarrays.
