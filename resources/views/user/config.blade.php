@@ -74,6 +74,7 @@
                             <label for="image_path" class="col-md-4 col-form-label text-md-right">Avatar</label>
 
                             <div class="col-md-6">
+                                @include('includes.avatar')
                                 <input id="image_path" type="file" class="form-control{{ $errors->has('image_path') ? ' is-invalid' : '' }}" name="image_path"  required>
 
                                 @if ($errors->has('image_path'))
