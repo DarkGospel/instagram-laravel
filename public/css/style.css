@@ -8,6 +8,7 @@
     height: 35px;
     border-radius: 900px;
     overflow: hidden;
+    margin-left: 20px;
 }
 .navbar .container-avatar img{
     height: 100%;

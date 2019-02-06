@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\Http\Response; //para funcion que devuelve la imagen que tenemos en el disco
 use Illuminate\Support\Facades\Storage; //Para las imagenes
 use Illuminate\Support\Facades\File; //Para las imagenes
 
 class UserController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function config(){
         return view('user.config');
     }
