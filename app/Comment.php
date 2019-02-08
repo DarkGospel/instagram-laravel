@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     //Establecemoslatablaasociadaalmodelo
-protected $table='comment';
+protected $table='comments';
 //DefinimoslarelaciónOneToManyconlatabla'images'
 public function image(){
 //EstemétododevuelveelobjetoImagendelquesehahechoelcomentario

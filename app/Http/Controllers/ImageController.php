@@ -33,6 +33,7 @@ class ImageController extends Controller
         $user = \Auth::user();
         //Asignar valores nuevo objetos
         $image = new Image();
+        $image->user_id = $user->id;
         $image->image_path = null;
         $image->description = $descripcion;
         
@@ -47,5 +48,10 @@ class ImageController extends Controller
         return redirect()->route('home')->with([
             'message' => 'La foto ha sido subida correctamente'
         ]);
+    }
+    
+    public function getImage($filename){
+        $file = Storage::disk('images')->get($filename);
+        return new Response($file, 200);
     }
 }
