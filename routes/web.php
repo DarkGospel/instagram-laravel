@@ -24,3 +24,6 @@ Route::get('/user/avatar/{filename}','UserController@getImage')->name('user.avat
 Route::get('/subir-imagen','ImageController@create')->name('image.create');
 Route::post('/imagen/save','ImageController@save')->name('image.save');
 Route::get('/image/file/{filename}','ImageController@getImage')->name('image.file');
+Route::get('/imagen/{id}','ImageController@detail')->name('image.detail');
+Route::post('/comment/save','CommentController@store')->name('comment.save');
+Route::get('/comment/delete/{id}','CommentController@delete')->name('comment.delete');

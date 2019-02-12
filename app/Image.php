@@ -11,7 +11,7 @@ class Image extends Model
 //DefinimoslarelaciónOneToManyconlatabla'comments'
 public function comments(){
 //Métodoquedevuelveunarraydeobjetosconloscomentariosasociadosalaimagen
-return $this->hasMany('App\Comment');
+return $this->hasMany('App\Comment')->orderBy('id', 'desc');
 }
 //DefinimoslarelaciónOneToManyconlatabla'likes'
 public function likes(){
